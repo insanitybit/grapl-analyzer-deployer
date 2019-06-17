@@ -18,18 +18,19 @@ def verify_payload(payload_body, key, signature):
 
 def lambda_handler(event, context):
     body = json.loads(event["body"])
-    if body["ref"] != "refs/heads/master":
-        return
 
     shared_secret = os.environ["GITHUB_SHARED_SECRET"]
     access_token = os.environ["GITHUB_ACCESS_TOKEN"]
-    repo_name = body["repository"]["full_name"]
 
     signature = event["headers"]["X-Hub-Signature"]
 
     assert verify_payload(
         event["body"].encode("utf8"), shared_secret.encode(), signature
     )
+
+    repo_name = body["repository"]["full_name"]
+    if body["ref"] != "refs/heads/master":
+        return
 
     g = Github(access_token)
     s3_client = boto3.client("s3")
