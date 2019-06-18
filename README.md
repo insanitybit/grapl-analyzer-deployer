@@ -19,7 +19,8 @@ You'll need to fill out a .env file with the following and place is it in the `a
 Variables:
 
 `GITHUB_SHARED_SECRET`
-The secret used by the server to authenticate the client. Consider:
+The secret used by the server to authenticate the client.
+Consider using the output of:
 `ruby -rsecurerandom -e 'puts SecureRandom.hex(20)'`
 
 `GITHUB_ACCESS_TOKEN`
