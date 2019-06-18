@@ -17,6 +17,7 @@ Change directories into the `/grapl-analyzer-deployer/analyzer-deployer-cdk/` fo
 You'll need to fill out a .env file with the following and place is it in the `analyzer-deployer-cdk` folder.
 
 Variables:
+
 `GITHUB_SHARED_SECRET`
 The secret used by the server to authenticate the client. Consider:
 `ruby -rsecurerandom -e 'puts SecureRandom.hex(20)'`
