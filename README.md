@@ -28,10 +28,11 @@ This is a "[Personal Access Token](https://help.github.com/en/articles/creating-
 This is the unique bucket prefix for your Grapl deployment.
 
 Example:
+```
 GITHUB_SHARED_SECRET="b21b7bad3a6d35623a4d1fc9d588352294af4eb4"
 GITHUB_ACCESS_TOKEN="31f9a214d7509a9c0ae2744df537d39de06422ec"
 BUCKET_PREFIX="exampleco"
-
+```
 (You may need to build dependencies with `npm i`)
 
 Run `./deploy.sh`
